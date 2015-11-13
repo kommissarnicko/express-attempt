@@ -4,15 +4,16 @@ var app = express();
 
 var getRandom = function(min, max)
 {
-	return Math.random() * (max - min) + min;
+	return Math.floor(Math.random() * (max - min) + min);
 }
+
+var randomNumber = getRandom(1, 100001);
 
 app.set('port', 3000);
 
 app.get('/',function(req,res){
   res.type('text/plain');
-  res.send('Enjoy the following random number:');
-  res.send(stringify(getRandom(1, 1000001)));
+  res.send("Enjoy this random number: " + randomNumber.toString());
 });
 
 
