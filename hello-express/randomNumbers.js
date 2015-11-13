@@ -2,17 +2,19 @@ var express = require('express');
 
 var app = express();
 
+var getRandom = function(min, max)
+{
+	return Math.random() * (max - min) + min;
+}
+
 app.set('port', 3000);
 
 app.get('/',function(req,res){
   res.type('text/plain');
-  res.send('Welcome to the main page!');
+  res.send('Enjoy the following random number:');
+  res.send(getRandom(1, 1000001));
 });
 
-app.get('/other-page',function(req,res){
-  res.type('text/plain');
-  res.send('Welcome to the other page!');
-});
 
 app.use(function(req,res){
   res.type('text/plain');
