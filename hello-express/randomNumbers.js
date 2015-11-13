@@ -7,13 +7,11 @@ var getRandom = function(min, max)
 	return Math.floor(Math.random() * (max - min) + min);
 }
 
-var randomNumber = getRandom(1, 100001);
-
 app.set('port', 3000);
 
 app.use('/',function(req,res){
   res.type('text/plain');
-  res.send("Enjoy this random number: " + randomNumber.toString());
+  res.send("Enjoy this random number: " + getRandom(1, 10001).toString());
 });
 
 
