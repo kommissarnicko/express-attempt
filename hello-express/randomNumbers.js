@@ -12,7 +12,7 @@ app.set('port', 3000);
 app.get('/',function(req,res){
   res.type('text/plain');
   res.send('Enjoy the following random number:');
-  res.send(getRandom(1, 1000001));
+  res.send(stringify(getRandom(1, 1000001)));
 });
 
 
