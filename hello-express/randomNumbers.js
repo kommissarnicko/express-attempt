@@ -11,7 +11,7 @@ var randomNumber = getRandom(1, 100001);
 
 app.set('port', 3000);
 
-app.get('/',function(req,res){
+app.use('/',function(req,res){
   res.type('text/plain');
   res.send("Enjoy this random number: " + randomNumber.toString());
 });
